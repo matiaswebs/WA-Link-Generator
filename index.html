@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generador de Link WhatsApp</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.5/css/pico.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="container">
+    <article>
+        <header>
+            <hgroup>
+                <h1>Generador de Link WhatsApp</h1>
+                <p>Genera un enlace personalizado de WhatsApp con mensaje predefinido.</p>
+            </hgroup>
+        </header>
+
+        <form id="waForm">
+            <select name="select" id="prefix" aria-label="Select" required>
+                <option selected disabled value="">Selecciona un país</option>
+            </select>
+
+            <input type="text" id="whatsapp-number" placeholder="Número de teléfono" required>
+            <textarea id="message" placeholder="¡Hola! 👋 Quiero hacer un pedido 📦"></textarea>
+            <footer>
+                <button type="button" onclick="generateLink()">Generar</button>
+            </footer>
+        </form>
+
+        <div id="result" style="display: none;">
+            <input type="text" id="waLink" readonly>
+            <div class="button-group">
+                <button type="button" onclick="copyLink()">Copiar enlace</button>
+                <button type="button" onclick="openLink()">Abrir</button>
+            </div>
+        </div>
+    </article>
+
+    <script src="script.js"></script>
+</body>
+</html>
